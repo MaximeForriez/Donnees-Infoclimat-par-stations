@@ -1,0 +1,4 @@
+station_id,dh_utc,temperature,pression,pression_variation_3h,humidite,point_de_rosee,visibilite,vent_moyen,vent_rafales,vent_rafales_10min,vent_direction,temperature_min,temperature_max,pluie_1h,pluie_3h,pluie_6h,pluie_12h,pluie_24h,pluie_cumul_0h,pluie_intensite,pluie_intensite_max_1h,uv,uv_index,ensoleillement,temperature_sol,temps_omm,complements,source
+000U6,2023-10-03 07:50:00,14.4,,,73,9.4,,,,0,,14.3,14.5,,,,,,0,0,0,,,,,,@@@@544.6@@@0@23.5@23.4@23.5@9:48am@9:51am@14.4@14.4@0@43@43@43@9:37am@9:37am@2151@2148@+0200,wlkIPxml
+000U6,2023-10-03 08:00:00,15.2,,,69,9.4,,,,0,,15.2,15.2,,,,,,0,0,0,,,,,,@@@@544.6@@@0@23.6@23.6@23.6@9:48am@10:01am@15@15@0@43@43@43@9:48am@9:48am@2200@2200@+0200,wlkIPxml
+000U6,2023-10-03 08:10:00,16,,,66,9.4,,0,,0,,15.2,16,,,,,,0,0,0,,,,,,@@@@544.6@@@0@23.8@23.6@23.8@9:48am@10:13am@16.1@15.6@0@42@42@43@10:13am@9:48am@2213@2200@+0200,wlkIPxml
