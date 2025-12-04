@@ -1,0 +1,7 @@
+station_id,dh_utc,temperature,pression,pression_variation_3h,humidite,point_de_rosee,visibilite,vent_moyen,vent_rafales,vent_rafales_10min,vent_direction,temperature_min,temperature_max,pluie_1h,pluie_3h,pluie_6h,pluie_12h,pluie_24h,pluie_cumul_0h,pluie_intensite,pluie_intensite_max_1h,uv,uv_index,ensoleillement,temperature_sol,temps_omm,complements,source
+000Q9,2021-08-15 15:30:00,36.4,1013,,29,15.5,,11.3,,19.3,223,17.3,37.6,,,,,,0,0,0,246,,,,,@@0@40.8@280.2@79.48@12.7@32.2,weatherlink
+000Q9,2021-08-15 16:00:00,36.1,1013,,29,15.3,,11.3,,19.3,190,17.3,37.6,0,0,0,0,,0,0,0,167,,,,,@@0@40.8@280.2@79.48@12.7@32.2,weatherlink
+000Q9,2021-08-15 16:30:00,35.2,1012.7,,31,15.5,,12.9,,20.9,248,17.3,37.6,,,,,,0,0,0,211,,,,,@@0@40.8@280.2@79.88@12.7@32.2,weatherlink
+000Q9,2021-08-15 17:00:00,34.8,1012.6,,31,15.2,,11.3,,19.3,190,17.3,37.6,0,0,0,0,,0,0,0,160,,,,,@@0@40.8@280.2@79.88@12.7@32.2,weatherlink
+000Q9,2021-08-15 17:30:00,33.3,1012.7,,35,15.7,,11.3,,22.5,216,17.3,37.6,,,,,,0,0,0,102,,,,,@@0@40.8@280.2@80.19@12.7@32.2,weatherlink
+000Q9,2021-08-15 18:00:00,31.3,1012.9,-0.1,41,16.5,,11.3,,19.3,232,17.3,37.6,0,0,0,0,,0,0,0,35,,,,,@@0@40.8@280.2@80.19@12.7@32.2,weatherlink
