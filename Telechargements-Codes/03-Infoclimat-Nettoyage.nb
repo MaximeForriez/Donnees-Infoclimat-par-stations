@@ -1,0 +1,284 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10753,        276]
+NotebookOptionsPosition[      9325,        245]
+NotebookOutlinePosition[      9767,        262]
+CellTagsIndexPosition[      9724,        259]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Infoclimat - Donn\[EAcute]es", "Title",
+ CellChangeTimes->{{3.9722963751649113`*^9, 
+  3.972296379224875*^9}},ExpressionUUID->"0504c510-e98e-4640-8111-\
+106ba77c2cef"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"lecteur", "=", 
+   RowBox[{"StringJoin", "[", 
+    RowBox[{"Take", "[", 
+     RowBox[{
+      RowBox[{"Characters", "[", 
+       RowBox[{"ToString", "[", 
+        RowBox[{"NotebookDirectory", "[", "]"}], "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "3"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"adresse", "=", 
+   RowBox[{"StringJoin", "[", 
+    RowBox[{"Take", "[", 
+     RowBox[{
+      RowBox[{"Characters", "[", 
+       RowBox[{"ToString", "[", 
+        RowBox[{"NotebookDirectory", "[", "]"}], "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"4", ",", 
+        RowBox[{"-", "1"}]}], "}"}]}], "]"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.972296072626275*^9, 3.9722961381076083`*^9}, {
+  3.972296179751871*^9, 3.972296180038812*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"b45685d5-0c78-4f37-be04-b7dcf37dc00d"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dossierref", "=", "\"\<infoclimat\\\\\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"DirectoryQ", "[", 
+      RowBox[{"StringJoin", "[", 
+       RowBox[{"lecteur", ",", "adresse", ",", "dossierref"}], "]"}], "]"}], 
+     "\[Equal]", "False"}], ",", 
+    RowBox[{"CreateDirectory", "[", 
+     RowBox[{"StringJoin", "[", 
+      RowBox[{"lecteur", ",", "adresse", ",", "dossierref"}], "]"}], "]"}], 
+    ","}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.972298785789838*^9, 3.9722988475847926`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"52df4720-ed1e-4d57-b479-31b8aa43bed5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"metadata", "=", 
+   RowBox[{
+    RowBox[{"Import", "[", 
+     RowBox[{"StringJoin", "[", 
+      RowBox[{
+      "lecteur", ",", "adresse", ",", "\"\<liste-des-stations.xls\>\""}], 
+      "]"}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"metadatatitre", "=", 
+  RowBox[{"metadata", "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"metadata", "=", 
+   RowBox[{"Take", "[", 
+    RowBox[{"metadata", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", 
+       RowBox[{"-", "1"}]}], "}"}]}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.972296431865944*^9, 3.972296442102462*^9}, {
+  3.9722964879345255`*^9, 3.9722964892864976`*^9}, {3.9722965344988365`*^9, 
+  3.972296579195979*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"d065bde0-b05c-4ff6-aa1f-fc9eea5b5d75"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"ID\"\>", ",", "\<\"Etat\"\>", 
+   ",", "\<\"D\[EAcute]partement\"\>", ",", "\<\"Station\"\>", 
+   ",", "\<\"Longitude\"\>", ",", "\<\"Latitude\"\>", 
+   ",", "\<\"Elevation\"\>", ",", "\<\"Derniere_Activite\"\>", 
+   ",", "\<\"Source\"\>", ",", "\<\"Code\"\>", ",", "\<\"Licence\"\>", 
+   ",", "\<\"URL_Licence\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.9722965795205975`*^9, 3.9725233634627886`*^9, 
+  3.9725392508038483`*^9, 3.9725717946227813`*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"c7055291-7b6c-4454-86ea-a32873a3271c"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"identifiant", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", "metadata", "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.972296541477096*^9, 3.9722965487481084`*^9}, {
+  3.9722965870193977`*^9, 3.97229659387949*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"1104c266-f9d5-43e0-97b3-f80e508ae645"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"anneedebut", "=", "1990"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"anneefin", "=", "2025"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"annee", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{"i", ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "anneedebut", ",", "anneefin"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"anneedebut", ",", "anneefin"}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.972408559053547*^9, 3.972408560748175*^9}, {
+   3.9724086326038074`*^9, 3.9724086681327286`*^9}, 3.972523369102712*^9},
+ CellLabel->"In[9]:=",ExpressionUUID->"2b97800a-5a68-4f53-b5a7-0bf986f63f50"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1990", ",", "1991", ",", "1992", ",", "1993", ",", "1994", ",", "1995", 
+   ",", "1996", ",", "1997", ",", "1998", ",", "1999", ",", "2000", ",", 
+   "2001", ",", "2002", ",", "2003", ",", "2004", ",", "2005", ",", "2006", 
+   ",", "2007", ",", "2008", ",", "2009", ",", "2010", ",", "2011", ",", 
+   "2012", ",", "2013", ",", "2014", ",", "2015", ",", "2016", ",", "2017", 
+   ",", "2018", ",", "2019", ",", "2020", ",", "2021", ",", "2022", ",", 
+   "2023", ",", "2024", ",", "2025"}], "}"}]], "Output",
+ CellChangeTimes->{3.9725233694755583`*^9, 3.972539250860253*^9, 
+  3.972571794709484*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"09489d72-921e-4f1a-bf05-41113c6972e4"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Do", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"nn", "=", "n"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"adresse2", "=", 
+      RowBox[{"StringJoin", "[", 
+       RowBox[{"lecteur", ",", "adresse", ",", "dossierref", ",", 
+        RowBox[{"identifiant", "[", 
+         RowBox[{"[", "nn", "]"}], "]"}], ",", "\"\<\\\\\>\""}], "]"}]}], ";",
+      "\[IndentingNewLine]", 
+     RowBox[{"SetDirectory", "[", "adresse2", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"listefichier", "=", 
+      RowBox[{"FileNames", "[", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"ResetDirectory", "[", "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Do", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"mm", "=", "m"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"data", "=", 
+         RowBox[{"Import", "[", 
+          RowBox[{"StringJoin", "[", 
+           RowBox[{"adresse2", ",", 
+            RowBox[{"listefichier", "[", 
+             RowBox[{"[", "mm", "]"}], "]"}]}], "]"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Length", "[", "data", "]"}], "\[Equal]", "1"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"DeleteFile", "[", 
+            RowBox[{"StringJoin", "[", 
+             RowBox[{"adresse2", ",", 
+              RowBox[{"listefichier", "[", 
+               RowBox[{"[", "mm", "]"}], "]"}]}], "]"}], "]"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Print", "[", 
+            RowBox[{"StringJoin", "[", 
+             RowBox[{"\"\<Le fichier \>\"", ",", "adresse2", ",", 
+              RowBox[{"listefichier", "[", 
+               RowBox[{"[", "mm", "]"}], "]"}], ",", 
+              "\"\< a \[EAcute]t\[EAcute] supprim\[EAcute].\>\""}], "]"}], 
+            "]"}], ";"}], ","}], "\[IndentingNewLine]", "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Clear", "[", 
+         RowBox[{"mm", ",", "data"}], "]"}], ";"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"m", ",", "1", ",", 
+         RowBox[{"Length", "[", "listefichier", "]"}]}], "}"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Clear", "[", 
+      RowBox[{"nn", ",", "adresse2", ",", "listefichier"}], "]"}], ";"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "1", ",", 
+      RowBox[{"Length", "[", "identifiant", "]"}]}], "}"}]}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.9725233748727827`*^9, 3.9725237034381113`*^9}, {
+  3.9725237976080184`*^9, 3.972523802213122*^9}, {3.972523856423809*^9, 
+  3.972523919018914*^9}, {3.972523970615887*^9, 3.9725239771113014`*^9}, {
+  3.97252406037949*^9, 3.972524077689125*^9}, {3.9725722512140617`*^9, 
+  3.9725722560763917`*^9}, {3.9725741889966974`*^9, 
+  3.9725741909105244`*^9}},ExpressionUUID->"da991ddc-17b8-4b55-9f7b-\
+b9e62d8c18a6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{
+   "dossierref", ",", "metadata", ",", "metadatatitre", ",", "identifiant", 
+    ",", "annee"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.9722999801681805`*^9, 3.972300002633727*^9}, {
+  3.972328862870408*^9, 3.97232886367681*^9}, {3.9725239378644257`*^9, 
+  3.972523944145166*^9}},
+ CellLabel->"In[34]:=",ExpressionUUID->"72e4903b-b494-482c-9139-68459390004c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"lecteur", ",", "adresse"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.9722961842571535`*^9, 3.9722961910424533`*^9}},
+ CellLabel->"In[35]:=",ExpressionUUID->"8bd00e9b-a0b1-4944-acef-579e239783b2"]
+}, Open  ]]
+},
+WindowSize->{1152., 585.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+FrontEndVersion->"12.2 pour Microsoft Windows (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"c62cbb73-f1bd-4d58-8c91-7941b2202516"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 173, 3, 97, "Title",ExpressionUUID->"0504c510-e98e-4640-8111-106ba77c2cef"],
+Cell[756, 27, 927, 25, 49, "Input",ExpressionUUID->"b45685d5-0c78-4f37-be04-b7dcf37dc00d"],
+Cell[1686, 54, 680, 17, 49, "Input",ExpressionUUID->"52df4720-ed1e-4d57-b479-31b8aa43bed5"],
+Cell[CellGroupData[{
+Cell[2391, 75, 881, 23, 68, "Input",ExpressionUUID->"d065bde0-b05c-4ff6-aa1f-fc9eea5b5d75"],
+Cell[3275, 100, 577, 10, 32, "Output",ExpressionUUID->"c7055291-7b6c-4454-86ea-a32873a3271c"]
+}, Open  ]],
+Cell[3867, 113, 372, 8, 28, "Input",ExpressionUUID->"1104c266-f9d5-43e0-97b3-f80e508ae645"],
+Cell[CellGroupData[{
+Cell[4264, 125, 687, 16, 88, "Input",ExpressionUUID->"2b97800a-5a68-4f53-b5a7-0bf986f63f50"],
+Cell[4954, 143, 718, 12, 53, "Output",ExpressionUUID->"09489d72-921e-4f1a-bf05-41113c6972e4"]
+}, Open  ]],
+Cell[5687, 158, 2928, 66, 302, "Input",ExpressionUUID->"da991ddc-17b8-4b55-9f7b-b9e62d8c18a6"],
+Cell[8618, 226, 427, 9, 28, "Input",ExpressionUUID->"72e4903b-b494-482c-9139-68459390004c"],
+Cell[9048, 237, 261, 5, 28, "Input",ExpressionUUID->"8bd00e9b-a0b1-4944-acef-579e239783b2"]
+}, Open  ]]
+}
+]
+*)
+

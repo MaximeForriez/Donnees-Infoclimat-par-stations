@@ -1,0 +1,288 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10427,        280]
+NotebookOptionsPosition[      9151,        253]
+NotebookOutlinePosition[      9569,        269]
+CellTagsIndexPosition[      9526,        266]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Infoclimat - M\[EAcute]tadonn\[EAcute]es", "Title",
+ CellChangeTimes->{{3.972296062038645*^9, 
+  3.9722960709743595`*^9}},ExpressionUUID->"0c092bc9-3560-4c92-80e4-\
+116bccab8fad"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"lecteur", "=", 
+   RowBox[{"StringJoin", "[", 
+    RowBox[{"Take", "[", 
+     RowBox[{
+      RowBox[{"Characters", "[", 
+       RowBox[{"ToString", "[", 
+        RowBox[{"NotebookDirectory", "[", "]"}], "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "3"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"adresse", "=", 
+   RowBox[{"StringJoin", "[", 
+    RowBox[{"Take", "[", 
+     RowBox[{
+      RowBox[{"Characters", "[", 
+       RowBox[{"ToString", "[", 
+        RowBox[{"NotebookDirectory", "[", "]"}], "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"4", ",", 
+        RowBox[{"-", "1"}]}], "}"}]}], "]"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.972296072626275*^9, 3.9722961381076083`*^9}, {
+  3.972296179751871*^9, 3.972296180038812*^9}},
+ CellLabel->
+  "In[480]:=",ExpressionUUID->"7647ac54-2809-4152-8ce0-b6b568662e8e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\<https://www.infoclimat.fr/opendata/stations_xhr.php?format=geojson\>\
+\"", ",", "\"\<JSON\>\""}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"data", "[", 
+    RowBox[{"[", 
+     RowBox[{"2", ",", "2"}], "]"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.9722941068665504`*^9, 3.9722941235755696`*^9}, {
+  3.972294999194236*^9, 3.9722950448153405`*^9}, {3.9722958027181005`*^9, 
+  3.9722958118861065`*^9}},
+ CellLabel->
+  "In[457]:=",ExpressionUUID->"c3b370fe-8693-42f9-ae57-acf41eabc544"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"datatitre", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<ID\>\"", ",", "\"\<Etat\>\"", ",", "\"\<D\[EAcute]partement\>\"", 
+     ",", "\"\<Station\>\"", ",", "\"\<Longitude\>\"", ",", 
+     "\"\<Latitude\>\"", ",", "\"\<Elevation\>\"", ",", 
+     "\"\<Derniere_Activite\>\"", ",", "\"\<Source\>\"", ",", "\"\<Code\>\"", 
+     ",", "\"\<Licence\>\"", ",", "\"\<URL_Licence\>\""}], "}"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.9722954727179556`*^9, 3.9722955675800776`*^9}},
+ CellLabel->
+  "In[459]:=",ExpressionUUID->"daccd3f9-3ec6-445e-af63-5959b629400e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"infoclimat", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{"0", ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"Length", "[", "data", "]"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Do", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"nn", "=", "n"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"data2", "=", 
+      RowBox[{"data", "[", 
+       RowBox[{"[", "nn", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"identifiant", "=", 
+      RowBox[{"data2", "[", 
+       RowBox[{"[", 
+        RowBox[{"3", ",", "2", ",", "1", ",", "2"}], "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"etat", "=", 
+      RowBox[{"data2", "[", 
+       RowBox[{"[", 
+        RowBox[{"3", ",", "2", ",", "5", ",", "2"}], "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"departement", "=", 
+      RowBox[{"data2", "[", 
+       RowBox[{"[", 
+        RowBox[{"3", ",", "2", ",", "6", ",", "2"}], "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"station", "=", 
+      RowBox[{"ToString", "[", 
+       RowBox[{"data2", "[", 
+        RowBox[{"[", 
+         RowBox[{"3", ",", "2", ",", "2", ",", "2"}], "]"}], "]"}], "]"}]}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"longitude", "=", 
+      RowBox[{"data2", "[", 
+       RowBox[{"[", 
+        RowBox[{"2", ",", "2", ",", "2", ",", "2", ",", "1"}], "]"}], "]"}]}],
+      ";", "\[IndentingNewLine]", 
+     RowBox[{"latitude", "=", 
+      RowBox[{"data2", "[", 
+       RowBox[{"[", 
+        RowBox[{"2", ",", "2", ",", "2", ",", "2", ",", "2"}], "]"}], "]"}]}],
+      ";", "\[IndentingNewLine]", 
+     RowBox[{"elevation", "=", 
+      RowBox[{"data2", "[", 
+       RowBox[{"[", 
+        RowBox[{"3", ",", "2", ",", "3", ",", "2"}], "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"derniereactivite", "=", 
+      RowBox[{"data2", "[", 
+       RowBox[{"[", 
+        RowBox[{"3", ",", "2", ",", "7", ",", "2"}], "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"source", "=", 
+      RowBox[{"data2", "[", 
+       RowBox[{"[", 
+        RowBox[{"3", ",", "2", ",", "4", ",", "2", ",", "4", ",", "2"}], 
+        "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"code", "=", 
+      RowBox[{"data2", "[", 
+       RowBox[{"[", 
+        RowBox[{"3", ",", "2", ",", "4", ",", "2", ",", "1", ",", "2"}], 
+        "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"licence", "=", 
+      RowBox[{"data2", "[", 
+       RowBox[{"[", 
+        RowBox[{"3", ",", "2", ",", "4", ",", "2", ",", "2", ",", "2"}], 
+        "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"urllicence", "=", 
+      RowBox[{"data2", "[", 
+       RowBox[{"[", 
+        RowBox[{"3", ",", "2", ",", "4", ",", "2", ",", "3", ",", "2"}], 
+        "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"infoclimat", "[", 
+       RowBox[{"[", "nn", "]"}], "]"}], "=", 
+      RowBox[{"{", 
+       RowBox[{
+       "identifiant", ",", "etat", ",", "departement", ",", "station", ",", 
+        "longitude", ",", "latitude", ",", "elevation", ",", 
+        "derniereactivite", ",", "source", ",", "code", ",", "licence", ",", 
+        "urllicence"}], "}"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Clear", "[", 
+      RowBox[{
+      "nn", ",", "data2", ",", "identifiant", ",", "etat", ",", "departement",
+        ",", "station", ",", "longitude", ",", "latitude", ",", "elevation", 
+       ",", "derniereactivite", ",", "source", ",", "code", ",", "licence", 
+       ",", "urllicence"}], "]"}], ";"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "1", ",", 
+      RowBox[{"Length", "[", "infoclimat", "]"}]}], "}"}]}], "]"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.9722950465561304`*^9, 3.9722954676585426`*^9}, {
+  3.972295515901757*^9, 3.9722955165732927`*^9}, {3.9722956563759236`*^9, 
+  3.9722957277143583`*^9}, {3.972295821063163*^9, 3.9722958556163435`*^9}},
+ CellLabel->
+  "In[463]:=",ExpressionUUID->"175b5a6b-a3a5-42ce-b655-b2326c584fa9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xls", "=", 
+   RowBox[{"Prepend", "[", 
+    RowBox[{"infoclimat", ",", "datatitre"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{"StringJoin", "[", 
+    RowBox[{
+    "lecteur", ",", "adresse", ",", "\"\<liste-des-stations.csv\>\""}], "]"}],
+    ",", "xls", ",", 
+   RowBox[{"CharacterEncoding", "\[Rule]", "\"\<UTF8\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{"StringJoin", "[", 
+    RowBox[{
+    "lecteur", ",", "adresse", ",", "\"\<liste-des-stations.xls\>\""}], "]"}],
+    ",", "xls"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", "xls", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.97229596835678*^9, 3.972295991305197*^9}, {
+  3.97229621444046*^9, 3.972296295994317*^9}},
+ CellLabel->
+  "In[487]:=",ExpressionUUID->"6d537843-ac7b-48f8-bff1-8f342317a271"],
+
+Cell[BoxData["\<\"C:\\\\+Maxime Forriez+\\\\+Sorbonne \
+universite+\\\\Infoclimat\\\\liste-des-stations.csv\"\>"], "Output",
+ CellChangeTimes->{
+  3.9722959767297945`*^9, {3.972296277925476*^9, 3.972296296482237*^9}},
+ CellLabel->
+  "Out[488]=",ExpressionUUID->"1793a979-4936-4163-b18d-8c79037d2d8c"],
+
+Cell[BoxData["\<\"C:\\\\+Maxime Forriez+\\\\+Sorbonne \
+universite+\\\\Infoclimat\\\\liste-des-stations.xls\"\>"], "Output",
+ CellChangeTimes->{
+  3.9722959767297945`*^9, {3.972296277925476*^9, 3.9722962966070337`*^9}},
+ CellLabel->
+  "Out[489]=",ExpressionUUID->"edca12aa-7d3a-4bfa-a35d-648727a069fc"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"data", ",", "datatitre", ",", "infoclimat"}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.9722961925649843`*^9, 3.9722962118294086`*^9}},
+ CellLabel->
+  "In[491]:=",ExpressionUUID->"d007ef37-55d8-4646-9679-c5d7efb15988"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"lecteur", ",", "adresse"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.9722961842571535`*^9, 3.9722961910424533`*^9}},
+ CellLabel->
+  "In[492]:=",ExpressionUUID->"baaf1326-7d22-4ff1-9c59-b4b09a0ba869"]
+}, Open  ]]
+},
+WindowSize->{1141.2, 580.1999999999999},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.2 pour Microsoft Windows (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"8cebd1e7-5192-41c8-943e-82f0cc78de39"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 185, 3, 97, "Title",ExpressionUUID->"0c092bc9-3560-4c92-80e4-116bccab8fad"],
+Cell[768, 27, 932, 26, 49, "Input",ExpressionUUID->"7647ac54-2809-4152-8ce0-b6b568662e8e"],
+Cell[1703, 55, 633, 16, 49, "Input",ExpressionUUID->"c3b370fe-8693-42f9-ae57-acf41eabc544"],
+Cell[2339, 73, 596, 13, 49, "Input",ExpressionUUID->"daccd3f9-3ec6-445e-af63-5959b629400e"],
+Cell[2938, 88, 4083, 101, 400, "Input",ExpressionUUID->"175b5a6b-a3a5-42ce-b655-b2326c584fa9"],
+Cell[CellGroupData[{
+Cell[7046, 193, 912, 25, 88, "Input",ExpressionUUID->"6d537843-ac7b-48f8-bff1-8f342317a271"],
+Cell[7961, 220, 300, 5, 32, "Output",ExpressionUUID->"1793a979-4936-4163-b18d-8c79037d2d8c"],
+Cell[8264, 227, 302, 5, 32, "Output",ExpressionUUID->"edca12aa-7d3a-4bfa-a35d-648727a069fc"]
+}, Open  ]],
+Cell[8581, 235, 286, 7, 28, "Input",ExpressionUUID->"d007ef37-55d8-4646-9679-c5d7efb15988"],
+Cell[8870, 244, 265, 6, 28, "Input",ExpressionUUID->"baaf1326-7d22-4ff1-9c59-b4b09a0ba869"]
+}, Open  ]]
+}
+]
+*)
+
