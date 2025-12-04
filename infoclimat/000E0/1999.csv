@@ -1,0 +1,3 @@
+station_id,dh_utc,temperature,pression,pression_variation_3h,humidite,point_de_rosee,visibilite,vent_moyen,vent_rafales,vent_rafales_10min,vent_direction,temperature_min,temperature_max,pluie_1h,pluie_3h,pluie_6h,pluie_12h,pluie_24h,pluie_cumul_0h,pluie_intensite,pluie_intensite_max_1h,uv,uv_index,ensoleillement,temperature_sol,temps_omm,complements,source
+000E0,1999-11-29 22:00:00,,,,,,,,,,,,,0,0,0,0,,,,,,,,,,,vws2
+000E0,1999-11-30 00:00:00,,,,,,,,,,,,,0,0,0,0,,,,,,,,,,,weatherlink
