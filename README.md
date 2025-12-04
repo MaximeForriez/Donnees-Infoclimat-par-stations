@@ -11,68 +11,10 @@ Le dépôt contient toutes les données du site [infoclimat](https://www.infocli
 - [Données infoclimat](./infoclimat/)
 
 > [!WARNING]
-> Les données couvrent une période entre 1996 et le **15 novembre 2025**.
+> En fonction des stations, les données couvrent une période entre 1996 et le **15 novembre 2025**.
 
 - [Liste des stations](./Telechargements-Codes/liste-des-stations.csv)
 
+    - [Liste des stations Météo France](./Telechargements-Codes/listeStationsPackRadome.csv) (Elle ne sont pas toutes présentes dans la base de données Infoclimat)
+
 - [Métadonnées](./Telechargements-Codes/metadata.csv)
-
-Chaque fichier en format C.S.V. contient :
-
-- station_id
-
-- dh_utc
-
-- temperature
-
-- pression
-
-- pression_variation_3h
-
-- humidite
-
-- point_de_rosee
-
-- visibilite
-
-- vent_moyen
-
-- vent_rafales
-
-- vent_rafales_10min
-
-- vent_direction
-
-- temperature_min
-
-- temperature_max
-
-- pluie_1h
-
-- pluie_3h
-
-- pluie_6h
-
-- pluie_12h
-
-- pluie_24h
-
-- pluie_cumul_0h
-
-- pluie_intensite
-
-- pluie_intensite_max_1h
-
-- uv
-
-- uv_index,ensoleillement
-
-- temperature_sol
-
-- temps_omm
-
-- complements
-
-- source
-
-
